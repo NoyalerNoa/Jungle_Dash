@@ -1,145 +1,78 @@
-# POS-Projekt – Spielidee & Planung  
+# POS-Projekt **Jungle Dash** – Spielidee & Planung  
 **Michael & Noa**
+
 ## Spielprinzip
 
-**2D-Abenteuer-Spiel** in einer zusammenhängenden **Open-World**.  
-In der Spielwelt geht es darum, neue Orte zu entdecken, versteckte Wege zu finden und durch geschickte Bewegung immer weitere Gebiete freizuschalten.
+Jungle Dash ist ein **2D-Parkour-Spiel** in einer zusammenhängenden **Open-World**.  
+In dem Spiel geht es darum Runen einzusammeln um Upgrades freizuschalten, die man benötigt um in neue Gegenden zu kommen.
 
-Der Spieler steuert **einen Hauptcharakter**, der verschiedene Regionen erkundet. Jede Welt hat ihr eigenes Aussehen, eigene Gefahren und kleine Besonderheiten.
+Der Spieler steuert einen **Dschungelbewohner**, der einen Tempel findet und dadurch eine spezielle Fähigkeit (Rennen) erlernt. 
 
 ### Verschiedene  Welten
-- **Wald** – dichter Nebel, alte Ruinen, Lianen und versteckte Höhlen  
-- **Wüste** – Sandstürme, versunkene Tempel, bewegliche Sandflächen  
-- **Schneegebiet** *(optional)* – Winde (Design), Kälteschaden (Schaden bei zu langem Aufenthalt)  
-- **Vulkan** *(optional)* – Lava, heiße Luftströme, brüchige Steine  
-- **Sumpf** *(optional)* – verlangsamende Flächen, giftige Pflanzen  
-- **Himmelinseln** *(optional)* – schwebende Plattformen, weite Sprünge  
-
----
+- **Dschungel** hohe Bäume, Lianen
+- **Wiesen** schnelle Gegner
+- **Wald**  wenig Licht
+- **Wüste** Sandsturm (schlechte Sicht, schiebende Winde)
+- **Schneegebiet** *(optional)* – Schaden bei zu langem Aufenthalt
+- **Vulkan** *(optional)* – Lava, brüchige Steine  
+- **Sumpf** *(optional)* – verlangsamende Flächen
+- **Himmelinseln** *(optional)* – schwebende Plattformen 
 
 ## Grundidee des Spiels
 
-Der Fokus liegt auf **Erkundung, Bewegung und kleinen Rätseln**.
+Der Fokus liegt auf **Erkundung, Bewegung und eventuell Rätseln**.
 
-Neue Bereiche werden nicht direkt freigeschaltet, sondern durch:
-- das Lösen kleiner **Rätsel**
-- das Entdecken von **geheimen Wegen**
-- das Meistern von **Jump-&-Run-Passagen**
-- das Finden von **versteckten Schlüsselpunkten**
-
----
+Neue Bereiche können nur mit bestimmten Fähigkeiten erreicht werden.
 
 
 # Must-have Features
 ## Bewegungssystem
 
-- **Laufen** – normale Fortbewegung  
-- **Rennen** – schnelleres Bewegen  
-- **Springen** – grundlegende Plattform-Mechanik  
-- **Dash** – kurzer schneller Schub in eine Richtung  
-- **Wandsprung** – ermöglicht vertikales Klettern und schwierigere Passagen  
-
----
+- **Normale Bewegung** - Herumlaufen und Springen 
+- **Rennen** – schnelleres Bewegen
+- **Dash** – horizontaler Sprung in der Luft 
+- **Wandsprung** – Abspringen von bestimmten Wänden
 
 ## Spielwelt / Map
-
-Eine zusammenhängende Map mit mehreren Themengebieten.
-
-### Anforderungen
 - verschiedene Biome
-- Übergänge zwischen den Gebieten
+- freischaltbarer Übergang
 - versteckte Bereiche
-- freischaltbare Map-Abschnitte
 
----
 
-## Hindernisse & Gefahren
-
-Kleine Gegner und Umweltgefahren sorgen für Abwechslung.
-
-### Beispiele
-- **Spinnen** – bewegen sich an Wänden oder von Decken  
-- **Schlangen** – schnelle Gegner am Boden  
-- **Schnee / Kälte** – verursacht langsamen, stetigen Schaden  
-- **Lava** – direkter Schaden bei Berührung  
-- **Dornen** – kleine Fallen in Plattform-Passagen  
+## Gegner
+ 
+- **Schlangen** – Gegner am Boden  
+- **Hirsch** – schnelle Gegner
 
 ---
 
 # Nice-to-have Features
 
-## Schnelles Reisen
+## Erweitertes Bewegungssystem
 
-Nach dem Freischalten bestimmter Punkte kann der Spieler sich schneller durch die Welt bewegen.
+- **Crouchen** - Hinknien um durch kleinere Passagen zu kommen.
+- **Rollen/Rutschen** - Rollen, bzw. Rutschen um sich schneller Fortzubewegen.
+- **Aufgeladenersprung** - Ein höherer Sprung durch halten von Space während man Croucht.
+- **Kombosprung** - Wenn man die Sprünge richtig timed wird der dritte Sprung höher.
+- **Blöcke bewegen** - Gewisse Blöcke können getragen werden, um Brücken zu bauen oder Rätsel zu lösen.
+- **Doppelsprung** - Man kann in der Luft nocheinmal Springen.
+- **Grappling Hook** - Ein Grappling Hook mit dem man sich an bestimmten Blöcken festhalten kann.
 
-### Idee
-- **Teleporter-Portale**
-- Aktivierung erst nach dem ersten Besuch
+## Hindernisse
 
----
-
-## Geladener Sprung
-
-Wenn der Spieler die Sprungtaste hält, lädt sich ein stärkerer Sprung auf.
-
-Gut für:
-- größere Abgründe
-- geheime hohe Plattformen
-
----
-
-## Bewegliche Blöcke
-
-Einfaches Rätsel-Element.
-
-### Einsatzmöglichkeiten
-- Schalter aktivieren
-- Wege öffnen
-- Plattformen bauen
-
----
-
-## Combo-Jumps
-
-Kombinationen aus Bewegungen für fortgeschrittenes Gameplay.
-
-### Beispiele
-- Dash + Sprung
-- Wandsprung + Dash
-- Geladener Sprung + Dash
-
-Das macht spätere Gebiete spannender und gibt dem Movement mehr Tiefe.
-
----
+- **Kälte** – permanenter Schaden wenn man zu lange draußen ist.  
+- **Lava** – direkter Schaden bei Berührung  (außer bei Crouchen)
+- **Brüchige Blöcke / Wolken** - Blöcke, die zerfallen, wenn der Spieler zu lange darauf steht.
 
 # Zusätzliche Ideen
 
 ## Sammelobjekte
 
-Über die Map verteilt können kleine Gegenstände versteckt sein.
+Über die Map verteilt können sammelbare Gegenstände versteckt sein. (Kleine Runen)
 
-### Möglichkeiten
-- Kristalle
-- Fragmente
-- alte Relikte
+## Währung
 
-Nutzen:
-- kosmetische Freischaltungen
-- optionale Geheimnisse
-- Fortschrittsanzeige
-
----
-
-## Kleine Story-Idee
-
-Der Hauptcharakter wacht in einer zerfallenen Welt auf.  
-Die verschiedenen Gebiete sind voneinander getrennt und müssen wieder verbunden werden.
-
-In jedem Gebiet befindet sich ein **altes Artefakt**, das einen Teil der Welt wieder aktiviert.
-
-Das gibt dem Erkunden ein klares Ziel.
-
----
+Eine Währung mit der man sich Gegenstände kaufen kann.
 
 # Grober Entwicklungsplan
 
@@ -147,28 +80,26 @@ Das gibt dem Erkunden ein klares Ziel.
 - Spielerbewegung programmieren
 - Kamera
 - Kollisionen
-- Testlevel
+- Testwelt
 
 ## Phase 2 – Erste Welt
-- erstes Biom (z. B. Wald)
+- einfache Weltgenerierung (Godot Feature)
+- erstes Biom (Dschungel)
 - einfache Hindernisse
-- kleine Rätsel
+- Rätsel
+- Upgrades
 
 ## Phase 3 – Weitere Gebiete
+- Wiesen
+- Wald
 - Wüste
-- Schnee
-- Vulkan
 
 ## Phase 4 – Feinschliff
 - Animationen
 - Soundeffekte
-- Teleporter
 - Sammelobjekte
-- Balancing
 
----
-
-# Ziel des Projekts
-
-Ein kleines, aber stimmiges **Abenteuer-Platformer-Spiel**,  
-bei dem **Erkundung**, **flüssige Bewegung** und **eine interessante Welt** im Mittelpunkt stehen.
+## Optionale Features
+- Weitere Gegenden mit Gimmicks
+- Weitere Upgrades
+- Währung
