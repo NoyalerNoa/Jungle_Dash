@@ -103,3 +103,4 @@ Eine Währung mit der man sich Gegenstände kaufen kann.
 - Weitere Gegenden mit Gimmicks
 - Weitere Upgrades
 - Währung
+
