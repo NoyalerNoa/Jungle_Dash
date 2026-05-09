@@ -19,6 +19,7 @@ public partial class StartScreen : Control
 	// Start the Game
 	private void _on_start_pressed()
 	{
+		GetTree().ChangeSceneToFile("res://main_scene.tscn");
 	}
 	
 	// Options / Settings
