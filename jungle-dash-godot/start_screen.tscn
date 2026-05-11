@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b8qxj5uwqdg3x"]
 
 [ext_resource type="Script" uid="uid://d044pwicmi1ss" path="res://StartScreen.cs" id="1_k1na2"]
-[ext_resource type="Texture2D" uid="uid://q8uui6sdtoug" path="res://jungle_background.png" id="1_pevhg"]
+[ext_resource type="Texture2D" uid="uid://q8uui6sdtoug" path="res://assets/img/jungle_background.png" id="1_pevhg"]
 [ext_resource type="FontFile" uid="uid://dsxvdyqce7mvk" path="res://GrapeSoda.ttf" id="2_afy8x"]
 [ext_resource type="StyleBox" uid="uid://bj5vvcrb737j3" path="res://new_style_box_flat.tres" id="2_k1na2"]
 

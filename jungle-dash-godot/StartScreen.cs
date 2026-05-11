@@ -30,5 +30,6 @@ public partial class StartScreen : Control
 	// Exit / Leave the Game
 	private void _on_exit_pressed()
 	{
+		GetTree().Quit();
 	}
 }
