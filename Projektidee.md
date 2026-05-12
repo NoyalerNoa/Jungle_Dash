@@ -68,5 +68,3 @@ Der Spieler steuert einen **Dschungelbewohner**, der einen Tempel findet und dad
 
 ## Währung
 Eine Währung mit der man sich Gegenstände kaufen kann.
-
-
