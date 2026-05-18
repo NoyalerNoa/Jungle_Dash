@@ -1,11 +1,20 @@
 [gd_scene format=3 uid="uid://bl424xncdj20l"]
 
+[ext_resource type="Script" uid="uid://cmo4c2cr5eh58" path="res://player/PlayerControls.cs" id="1_boad6"]
 [ext_resource type="Texture2D" uid="uid://dicr008cvkd2e" path="res://assets/img/Individual Sprite/idle/Warrior_Idle_1.png" id="1_g6k8r"]
 [ext_resource type="Texture2D" uid="uid://ekohwfo3r2x4" path="res://assets/img/Individual Sprite/idle/Warrior_Idle_2.png" id="2_boad6"]
 [ext_resource type="Texture2D" uid="uid://1dd78qi5ouqq" path="res://assets/img/Individual Sprite/idle/Warrior_Idle_3.png" id="3_rgyib"]
 [ext_resource type="Texture2D" uid="uid://brp53e38u7vxq" path="res://assets/img/Individual Sprite/idle/Warrior_Idle_4.png" id="4_hg6s5"]
 [ext_resource type="Texture2D" uid="uid://db88nrfijiesa" path="res://assets/img/Individual Sprite/idle/Warrior_Idle_5.png" id="5_8t03j"]
 [ext_resource type="Texture2D" uid="uid://td24do1e5bog" path="res://assets/img/Individual Sprite/idle/Warrior_Idle_6.png" id="6_2ieo8"]
+[ext_resource type="Texture2D" uid="uid://2qkpgxcpog8j" path="res://assets/img/Individual Sprite/Run/Warrior_Run_1.png" id="8_wodsf"]
+[ext_resource type="Texture2D" uid="uid://y34xnuyjhw8w" path="res://assets/img/Individual Sprite/Run/Warrior_Run_2.png" id="9_32hag"]
+[ext_resource type="Texture2D" uid="uid://shoijeh5hvpk" path="res://assets/img/Individual Sprite/Run/Warrior_Run_3.png" id="10_tqiix"]
+[ext_resource type="Texture2D" uid="uid://cj2pfkgg6r8ba" path="res://assets/img/Individual Sprite/Run/Warrior_Run_4.png" id="11_e7oew"]
+[ext_resource type="Texture2D" uid="uid://dmk3t5hc2knov" path="res://assets/img/Individual Sprite/Run/Warrior_Run_5.png" id="12_c35mf"]
+[ext_resource type="Texture2D" uid="uid://dx6nrs6pp71mo" path="res://assets/img/Individual Sprite/Run/Warrior_Run_6.png" id="13_65viv"]
+[ext_resource type="Texture2D" uid="uid://k25k8mtvsyhl" path="res://assets/img/Individual Sprite/Run/Warrior_Run_7.png" id="14_x7c3f"]
+[ext_resource type="Texture2D" uid="uid://jwt85wb4xx4h" path="res://assets/img/Individual Sprite/Run/Warrior_Run_8.png" id="15_bjvpn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ebec5"]
 height = 34.0
@@ -34,9 +43,39 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_wodsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_32hag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tqiix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_e7oew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_c35mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_65viv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_x7c3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bjvpn")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=538689558]
+script = ExtResource("1_boad6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=55379640]
 shape = SubResource("CapsuleShape2D_ebec5")
@@ -44,7 +83,7 @@ shape = SubResource("CapsuleShape2D_ebec5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=710964095]
 position = Vector2(5, -6)
 sprite_frames = SubResource("SpriteFrames_yllr7")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.8856412
+frame = 6
+frame_progress = 0.7630244
