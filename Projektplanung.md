@@ -1,91 +1,46 @@
 # Grober Entwicklungsplan
+### ***Game Engine:*** Godot
 
-## 1. GUI - Skizzen
+## GUI - Skizzen
+### 1. Hauptmenü - Window
+Skizze:
+![Hauptmenü](JungleDash_Startscreen.jpeg)
+### 2. Pause - Window
+Skizze:
+![Optionen](JungleDash_Pausewindow.jpeg)
+### 3. Upgrades - Window
+Skizze:
+![Upgrades](JungleDash_Upgradeswindow.jpeg)
+### 4. Hauptfenster
+Skizze:
+![Upgrades](JungleDash_MainWindow.jpeg)
+
 
 ## Zeitplan
-| Datum   | Aufgabe              | Person        | Zeit |
-|--------|------------------------|--------------|------|
-| 20.05  | Idee & Planung         | Michael & Noa | 2h   |
-| 21.05  | GUI Skizzen            | Noa          | 2h   |
-| 22.05  | Klassendiagramm        | Michael      | 3h   |
-| 23.05  | Grundgerüst            | Michael      | 4h   |
-| 24.05  | Movement System        | Michael      | 5h   |
-| 25.05  | Dash & Sprünge         | Michael      | 4h   |
-| 26.05  | Gegner                 | Noa          | 4h   |
-| 27.05  | Welt / Biome           | Noa          | 5h   |
-| 28.05  | Runen / Upgrades       | Beide        | 3h   |
-| 29.05  | UI / HUD / Pausemenü   | Noa          | 4h   |
-| 30.05  | Testing                | Beide        | 5h   |
-| 31.05  | Präsentation           | Beide        | 2h   |
+| Datum  | Aufgabe                | Person        | Zeit |
+|--------|------------------------|-------------- |------|
+| 20.05  | Map erstellen          | Michael & Noa | 2h   |
+| 21.05  | Anfangsbildschirm      | Michael           | 2h   |
+| 22.05  | Sammelobjekte          | Michael       | 3h   |
+| 23.05  | Optionen Fenster            | Michael     | 4h  |
+| 24.05  | Gegner (Schlangen, Hirsch)  | Michael     | 5h  |
+| 25.05  | versteckte Bereiche         | Michael     | 4h  |
+| 26.05  | freischaltbarer Übergang    | Noa         | 4h  |
+| 27.05  | Biome                       | Noa         | 5h  |
+| 28.05  | Wandsprung                  | Beide       | 3h  |
+| 29.05  | Dash                        | Noa         | 4h  |
+| 30.05  | Rennen                 | Beide         | 5h  |
+| 31.05  | Crouchen               | Beide         | 2h  |
+| 31.05  | Normale Bewegung       | Beide         | 2h  |
+| 31.05  | Rollen/Rutschen        | Beide         | 2h  |
+| 31.05  | Aufgeladener Sprung    | Beide         | 2h  |
+| 31.05  | Kombosprung            | Beide         | 2h  |
+| 31.05  | Doppelsprung           | Beide         | 2h  |
+| 31.05  | Kälte/Lava             | Beide         | 2h  |
+| 31.05  | Währung                | Beide         | 2h  |
+| 31.05  | Blöcke bewegen         | Beide         | 2h  |
+---
 
 ## Klassendiagramm
-```mermaid
-classDiagram
 
-class Game {
-  - currentLevel
-  - player
-  - enemies
-  + startGame()
-  + update()
-  + render()
-  + pauseGame()
-}
-
-class Player {
-  - health
-  - speed
-  - positionX
-  - positionY
-  - runeCount
-  - abilities
-  + move()
-  + jump()
-  + dash()
-  + crouch()
-  + collectRune()
-}
-
-class Ability {
-  - name
-  - unlocked
-  + unlock()
-  + activate()
-}
-
-class Enemy {
-  - damage
-  - speed
-  - position
-  + move()
-  + attack()
-}
-
-class Snake {
-  + poison()
-}
-
-class Deer {
-  + charge()
-}
-
-class Rune {
-  - position
-  - collected
-  + collect()
-}
-
-class World {
-  - biomes
-  - mapSize
-  + loadBiome()
-  + changeArea()
-}
-
-Game --> Player
-Game --> Enemy
-Game --> World
-Player --> Ability
-Player --> Rune
-Enemy <|-- Snake
-Enemy <|-- Deer
+![Klassendigramm uml](Klassendiagramm_uml.png)
