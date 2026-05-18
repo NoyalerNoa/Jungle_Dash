@@ -1,4 +1,5 @@
 # Grober Entwicklungsplan
+*Von Michael und Noa*
 ### ***Game Engine:*** Godot
 
 ## GUI - Skizzen
@@ -9,8 +10,11 @@ Skizze:
 Skizze:
 ![Optionen](JungleDash_Pausewindow.jpeg)
 ### 3. Upgrades - Window
-Skizze:
-![Upgrades](JungleDash_Upgradeswindow.jpeg)
+Skizzen:
+- Vor dem Upgrade: Der Tempel leuchtet\
+![Upgrade_after](JungleDash_Upgrade_before.png)
+- Nach dem Upgrade: Der Tempel ist erloschen und der Spieler hat die Fähigkeit freigeschalten. (Dash)\
+![Upgrade_after](JungleDash_Upgrade_after.png)
 ### 4. Hauptfenster
 Skizze:
 ![Upgrades](JungleDash_MainWindow.jpeg)
