@@ -15,3 +15,33 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Visual Studio
+.vs/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# Visual Studio temporäre Dateien und Caches
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.VC.db
+*.VC.opendb
+
+# MSBuild und Build-Ausgaben
+_ReSharper*/
+[Bb]in/
+[Oo]bj/
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Logdateien und Berichte
+*.log
+*.tlog
+*.log.*
