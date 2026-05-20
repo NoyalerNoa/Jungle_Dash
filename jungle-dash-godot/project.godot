@@ -15,10 +15,6 @@ run/main_scene="uid://b8qxj5uwqdg3x"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
-[audio]
-
-buses/default_bus_layout="Music"
-
 [dotnet]
 
 project/assembly_name="JungleDash_Godot"
