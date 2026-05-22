@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bkunes16sto0d" path="res://assets/img/game_background_1.png" id="1_2c62f"]
 [ext_resource type="Script" uid="uid://blutub58gs3nc" path="res://MainScene.cs" id="1_d5x1h"]
 [ext_resource type="PackedScene" uid="uid://bl424xncdj20l" path="res://player/player.tscn" id="3_gyfs4"]
+[ext_resource type="PackedScene" uid="uid://b63spa8f3ljqn" path="res://nodes/Options.tscn" id="5_8mm7a"]
 
 [node name="MainScene" type="Node2D" unique_id=1534010968]
 script = ExtResource("1_d5x1h")
@@ -21,3 +22,10 @@ tile_set = ExtResource("1_0f027")
 
 [node name="Player" parent="." unique_id=538689558 instance=ExtResource("3_gyfs4")]
 position = Vector2(85, 541)
+
+[node name="Options" parent="." unique_id=2021309966 instance=ExtResource("5_8mm7a")]
+process_mode = 3
+offset_left = 308.0
+offset_top = 132.0
+offset_right = 821.0
+offset_bottom = 541.0
