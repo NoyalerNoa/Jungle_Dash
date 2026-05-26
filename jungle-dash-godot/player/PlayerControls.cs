@@ -37,6 +37,31 @@ public partial class PlayerControls : CharacterBody2D
 
 		velocity.X = direction * Speed;
 
+		if (IsOnFloor())
+		{
+			if (direction != 0)
+			{
+				animatedSprite.Play("run");
+			}
+			else
+			{
+				animatedSprite.Play("idle");
+			}
+		}
+
+		else
+		{
+			if (velocity.Y > 0)
+			{
+				animatedSprite.Play("jump");
+			}
+			else
+			{
+				animatedSprite.Play("fall");
+			}
+		}
+
+
 		if (direction > 0)
 		{
 			animatedSprite.FlipH = false;
@@ -46,16 +71,7 @@ public partial class PlayerControls : CharacterBody2D
 			animatedSprite.FlipH = true;
 		}
 
-		if(direction != 0)
-		{
-			animatedSprite.Play("run");
-		}
-		else
-		{
-			animatedSprite.Play("idle");
-		}
-
-			Velocity = velocity;
+		Velocity = velocity;
 		//Bis hier
 		MoveAndSlide();
 	}
