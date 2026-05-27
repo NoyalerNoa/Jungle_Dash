@@ -21,11 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://shoijeh5hvpk" path="res://assets/img/Individual Sprite/Run/Warrior_Run_3.png" id="10_tqiix"]
 [ext_resource type="Texture2D" uid="uid://pqi71jacsqlv" path="res://assets/img/Individual Sprite/Dash/Warrior_Dash_4.png" id="11_2uvqg"]
 [ext_resource type="Texture2D" uid="uid://cj2pfkgg6r8ba" path="res://assets/img/Individual Sprite/Run/Warrior_Run_4.png" id="11_e7oew"]
-[ext_resource type="Texture2D" uid="uid://cd1owgt2ue75x" path="res://assets/img/Individual Sprite/Dash/Warrior_Dash_5.png" id="12_1s1yo"]
 [ext_resource type="Texture2D" uid="uid://dmk3t5hc2knov" path="res://assets/img/Individual Sprite/Run/Warrior_Run_5.png" id="12_c35mf"]
-[ext_resource type="Texture2D" uid="uid://d1g2rtoplanh3" path="res://assets/img/Individual Sprite/Dash/Warrior_Dash_6.png" id="13_5ejfk"]
 [ext_resource type="Texture2D" uid="uid://dx6nrs6pp71mo" path="res://assets/img/Individual Sprite/Run/Warrior_Run_6.png" id="13_65viv"]
-[ext_resource type="Texture2D" uid="uid://doognqeruwclu" path="res://assets/img/Individual Sprite/Dash/Warrior_Dash_7.png" id="14_jd2rm"]
 [ext_resource type="Texture2D" uid="uid://k25k8mtvsyhl" path="res://assets/img/Individual Sprite/Run/Warrior_Run_7.png" id="14_x7c3f"]
 [ext_resource type="Texture2D" uid="uid://jwt85wb4xx4h" path="res://assets/img/Individual Sprite/Run/Warrior_Run_8.png" id="15_bjvpn"]
 [ext_resource type="Texture2D" uid="uid://bbqllenbybyp3" path="res://assets/img/Individual Sprite/Death-Effect/Warrior_Death_1.png" id="15_n0b8q"]
@@ -93,15 +90,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("11_2uvqg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_1s1yo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_5ejfk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_jd2rm")
 }],
 "loop": true,
 "name": &"dash",
@@ -266,6 +254,6 @@ shape = SubResource("CapsuleShape2D_ebec5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=710964095]
 position = Vector2(5, -6)
 sprite_frames = SubResource("SpriteFrames_yllr7")
-animation = &"jump"
+animation = &"dash"
 autoplay = "idle"
-frame_progress = 0.70323193
+frame_progress = 0.08759653
