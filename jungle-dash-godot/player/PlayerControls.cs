@@ -3,6 +3,7 @@ using System;
 
 public partial class PlayerControls : CharacterBody2D
 {
+	private Options options;
 	[Export] public float Speed = 300.0f;
 	[Export] public float JumpVelocity = -400.0f;
 	private AnimatedSprite2D animatedSprite; // Von KI
@@ -10,7 +11,35 @@ public partial class PlayerControls : CharacterBody2D
 	public override void _Ready()
 	{
 		animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-	} //Bis hier
+		options = GetNode<Options>("Options");
+
+		options.Visible = false; //Bis hier
+
+		options.Connect("BackPressed", Callable.From(OnOptionsBackPressed));
+	}
+
+	// Pause Menue
+	public override void _Input(InputEvent @event)
+	{
+		if (@event.IsActionPressed("ui_cancel"))
+		{
+			TogglePauseMenu();
+		}
+	}
+
+	private void TogglePauseMenu()
+	{
+		GetTree().Paused = true;
+		options.Visible = true;
+	}
+
+	private void OnOptionsBackPressed()
+	{
+		GetTree().Paused = false;
+		options.Visible = false;
+	}
+
+	// Player
 
 	public override void _PhysicsProcess(double delta)
 	{

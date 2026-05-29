@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Michael\\OneDrive\\GitHub_Projekte\\Jungle_Dash\\jungle-dash-godot\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|c:\\users\\michael\\onedrive\\github_projekte\\jungle_dash\\jungle-dash-godot\\nodes\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|solutionrelative:nodes\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|c:\\users\\michael\\onedrive\\github_projekte\\jungle_dash\\jungle-dash-godot\\player\\playercontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|solutionrelative:player\\playercontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|c:\\users\\michael\\onedrive\\github_projekte\\jungle_dash\\jungle-dash-godot\\startscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|solutionrelative:startscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|c:\\users\\michael\\onedrive\\github_projekte\\jungle_dash\\jungle-dash-godot\\nodes\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|solutionrelative:nodes\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|c:\\users\\michael\\onedrive\\github_projekte\\jungle_dash\\jungle-dash-godot\\mainscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|solutionrelative:mainscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|c:\\users\\michael\\onedrive\\github_projekte\\jungle_dash\\jungle-dash-godot\\player\\playercontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|solutionrelative:player\\playercontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|c:\\users\\michael\\onedrive\\github_projekte\\jungle_dash\\jungle-dash-godot\\startscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|solutionrelative:startscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Options.cs",
               "DocumentMoniker": "C:\\Users\\Michael\\OneDrive\\GitHub_Projekte\\Jungle_Dash\\jungle-dash-godot\\nodes\\Options.cs",
               "RelativeDocumentMoniker": "nodes\\Options.cs",
               "ToolTip": "C:\\Users\\Michael\\OneDrive\\GitHub_Projekte\\Jungle_Dash\\jungle-dash-godot\\nodes\\Options.cs",
               "RelativeToolTip": "nodes\\Options.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-22T07:43:20.803Z",
               "EditorCaption": ""
@@ -49,26 +49,26 @@
               "RelativeDocumentMoniker": "MainScene.cs",
               "ToolTip": "C:\\Users\\Michael\\OneDrive\\GitHub_Projekte\\Jungle_Dash\\jungle-dash-godot\\MainScene.cs",
               "RelativeToolTip": "MainScene.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAUAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-15T07:39:49.435Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-15T07:39:49.435Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "PlayerControls.cs",
               "DocumentMoniker": "C:\\Users\\Michael\\OneDrive\\GitHub_Projekte\\Jungle_Dash\\jungle-dash-godot\\player\\PlayerControls.cs",
               "RelativeDocumentMoniker": "player\\PlayerControls.cs",
               "ToolTip": "C:\\Users\\Michael\\OneDrive\\GitHub_Projekte\\Jungle_Dash\\jungle-dash-godot\\player\\PlayerControls.cs",
               "RelativeToolTip": "player\\PlayerControls.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T14:38:25.511Z"
+              "WhenOpened": "2026-05-12T14:38:25.511Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "StartScreen.cs",
               "DocumentMoniker": "C:\\Users\\Michael\\OneDrive\\GitHub_Projekte\\Jungle_Dash\\jungle-dash-godot\\StartScreen.cs",
               "RelativeDocumentMoniker": "StartScreen.cs",
@@ -76,8 +76,7 @@
               "RelativeToolTip": "StartScreen.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T11:57:13.585Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-09T11:57:13.585Z"
             }
           ]
         }
