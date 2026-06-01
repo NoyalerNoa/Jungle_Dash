@@ -1,45 +1,36 @@
 using Godot;
+using Godot.Collections;
 using System;
 
 public partial class PlayerControls : CharacterBody2D
 {
-	private Options options;
 	[Export] public float Speed = 300.0f;
+	[Export] public float DashVelocitiy = 1000.0f;
+	[Export] public int MaxDashFrames = 10;
+	[Export] public int CooldownFrames = 10;
+	private int CurrentDashFrames;
 	[Export] public float JumpVelocity = -400.0f;
 	private AnimatedSprite2D animatedSprite; // Von KI
+	public Dictionary<string, bool> abilitys = new Dictionary<string, bool>()
+	{
+		{"Dash", false }
+	};
 
 	public override void _Ready()
 	{
-		animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-		options = GetNode<Options>("Options");
-
-		options.Visible = false; //Bis hier
-
-		options.Connect("BackPressed", Callable.From(OnOptionsBackPressed));
+		animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D"); //Bis hier
+		CurrentDashFrames = MaxDashFrames;
 	}
 
-	// Pause Menue
-	public override void _Input(InputEvent @event)
+	public Vector2 Dash(Vector2 velocity)
 	{
-		if (@event.IsActionPressed("ui_cancel"))
-		{
-			TogglePauseMenu();
-		}
+		if (animatedSprite.FlipH)
+			velocity.X -= DashVelocitiy;
+		else
+			velocity.X += DashVelocitiy;
+		CurrentDashFrames--;
+		return velocity;
 	}
-
-	private void TogglePauseMenu()
-	{
-		GetTree().Paused = true;
-		options.Visible = true;
-	}
-
-	private void OnOptionsBackPressed()
-	{
-		GetTree().Paused = false;
-		options.Visible = false;
-	}
-
-	// Player
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -66,6 +57,62 @@ public partial class PlayerControls : CharacterBody2D
 
 		velocity.X = direction * Speed;
 
+		if (Input.IsActionJustPressed("dash") && CurrentDashFrames == MaxDashFrames)
+		{
+			velocity = Dash(velocity);
+		}
+
+		if (CurrentDashFrames < MaxDashFrames)
+		{
+			if (CurrentDashFrames > 0)
+			{
+				velocity = Dash(velocity);
+			}
+			else if (CurrentDashFrames > -CooldownFrames)
+			{
+				CurrentDashFrames--;
+			}
+		}
+
+		if (CurrentDashFrames + CooldownFrames <= 0)
+		{
+			CurrentDashFrames = MaxDashFrames;
+		}
+
+		if (CurrentDashFrames < MaxDashFrames && CurrentDashFrames > 0)
+		{
+			animatedSprite.Play("dash");
+		}
+
+		else
+		{
+
+			if (IsOnFloor())
+			{
+				if (direction != 0)
+				{
+					animatedSprite.Play("run");
+				}
+				else
+				{
+					animatedSprite.Play("idle");
+				}
+			}
+
+			else
+			{
+				if (velocity.Y > 0)
+				{
+					animatedSprite.Play("jump");
+				}
+				else
+				{
+					animatedSprite.Play("fall");
+				}
+			}
+		}
+
+
 		if (direction > 0)
 		{
 			animatedSprite.FlipH = false;
@@ -75,16 +122,7 @@ public partial class PlayerControls : CharacterBody2D
 			animatedSprite.FlipH = true;
 		}
 
-		if(direction != 0)
-		{
-			animatedSprite.Play("run");
-		}
-		else
-		{
-			animatedSprite.Play("idle");
-		}
-
-			Velocity = velocity;
+		Velocity = velocity;
 		//Bis hier
 		MoveAndSlide();
 	}

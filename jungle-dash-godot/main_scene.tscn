@@ -21,7 +21,8 @@ tile_map_data = PackedByteArray("AAAJACMAAQADAAEAAAAKACMAAQADAAEAAAALACMAAQADAAE
 tile_set = ExtResource("1_0f027")
 
 [node name="Player" parent="." unique_id=538689558 instance=ExtResource("3_gyfs4")]
-visible = false
+DashVelocitiy = 700.0
+CooldownFrames = 30
 position = Vector2(136, 542)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=118308781]
