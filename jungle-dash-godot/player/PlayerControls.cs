@@ -5,16 +5,21 @@ using System;
 public partial class PlayerControls : CharacterBody2D
 {
 	[Export] public float Speed = 300.0f;
-	[Export] public float DashVelocitiy = 1000.0f;
+	[Export] public float DashVelocity = 1000.0f;
 	[Export] public int MaxDashFrames = 10;
 	[Export] public int CooldownFrames = 10;
 	private int CurrentDashFrames;
+	[Export] public float VerticalWalljumpVelocity = 1500.0f;
 	[Export] public float JumpVelocity = -400.0f;
-	private AnimatedSprite2D animatedSprite; // Von KI
+	// Von Claude um automatische Abbremsung zu ermöglichen: Neue Variable für die Bremsrate nach dem Dash
+	[Export] public float DashBrakeRate = 2000.0f;
+
 	public Dictionary<string, bool> abilitys = new Dictionary<string, bool>()
 	{
-		{"Dash", false }
+		{"Dash", true },
+		{"Walljump", true}
 	};
+	private AnimatedSprite2D animatedSprite; // Von ChatGPT; Prompt: Wie erstelle ich animationen?
 
 	public override void _Ready()
 	{
@@ -25,10 +30,11 @@ public partial class PlayerControls : CharacterBody2D
 	public Vector2 Dash(Vector2 velocity)
 	{
 		if (animatedSprite.FlipH)
-			velocity.X -= DashVelocitiy;
+			velocity.X = -DashVelocity;
 		else
-			velocity.X += DashVelocitiy;
+			velocity.X += DashVelocity - velocity.X;
 		CurrentDashFrames--;
+		velocity.Y = 0;
 		return velocity;
 	}
 
@@ -43,21 +49,30 @@ public partial class PlayerControls : CharacterBody2D
 		}
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("jump") && IsOnFloor())
+		if (Input.IsActionJustPressed("jump"))
 		{
-			velocity.Y = JumpVelocity;
+			if (IsOnFloor())
+			{
+				velocity.Y = JumpVelocity;
+			}
+			else if (abilitys["Walljump"])
+			{
+				if (IsOnWall())
+				{
+					velocity.Y = JumpVelocity;
+					velocity.X = VerticalWalljumpVelocity * GetWallNormal().X;
+				}
+			}
 		}
 
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
 
 		// Von Ki weil das automatische nicht ging.
 		float direction = Input.GetAxis("move_left", "move_right");
 
 
-		velocity.X = direction * Speed;
+		//Bis hier
 
-		if (Input.IsActionJustPressed("dash") && CurrentDashFrames == MaxDashFrames)
+		if (Input.IsActionJustPressed("dash") && abilitys["Dash"] && CurrentDashFrames == MaxDashFrames)
 		{
 			velocity = Dash(velocity);
 		}
@@ -70,6 +85,8 @@ public partial class PlayerControls : CharacterBody2D
 			}
 			else if (CurrentDashFrames > -CooldownFrames)
 			{
+				// Von Claude um automatische Abbremsung zu ermöglichen: Ersetzt das harte Stoppen durch sanftes Abbremsen Richtung 0
+				velocity.X = Mathf.MoveToward(velocity.X, 0, DashBrakeRate * (float)delta);
 				CurrentDashFrames--;
 			}
 		}
@@ -86,6 +103,8 @@ public partial class PlayerControls : CharacterBody2D
 
 		else
 		{
+			// Von Gemini um die Bewegung zu verbessern: Nutzt MoveToward für eine physikalisch weiche Annäherung an die Zielgeschwindigkeit, anstatt die X-Velocity hart zu überschreiben
+			velocity.X = Mathf.MoveToward(velocity.X, direction * Speed, Speed * 10.0f * (float)delta);
 
 			if (IsOnFloor())
 			{
@@ -123,7 +142,6 @@ public partial class PlayerControls : CharacterBody2D
 		}
 
 		Velocity = velocity;
-		//Bis hier
 		MoveAndSlide();
 	}
 }
