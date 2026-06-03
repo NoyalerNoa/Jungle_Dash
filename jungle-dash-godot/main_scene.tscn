@@ -22,8 +22,10 @@ tile_set = ExtResource("1_0f027")
 
 [node name="Player" parent="." unique_id=538689558 instance=ExtResource("3_gyfs4")]
 position = Vector2(83, 541)
+DashVelocity = 800.0
+MaxDashFrames = 8
 CooldownFrames = 30
-VerticalWalljumpVelocity = 1000.0
+VerticalWalljumpVelocity = 500.0
 
 [node name="Options" parent="." unique_id=2021309966 instance=ExtResource("5_8mm7a")]
 process_mode = 3
