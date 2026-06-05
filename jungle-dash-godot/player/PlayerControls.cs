@@ -6,10 +6,14 @@ public partial class PlayerControls : CharacterBody2D
 {
 	[Export] public float Speed = 300.0f;
 	[Export] public float DashVelocity = 1000.0f;
-	[Export] public int MaxDashFrames = 10;
-	[Export] public int CooldownFrames = 10;
+	[Export] public int MaxDashFrames = 8;
+	[Export] public int CooldownFrames = 30;
+	[Export] public int MaxKyoteFrames = 8;
+	[Export] public int MaxPrejumpFrames = 10;
 	private int CurrentDashFrames;
-	[Export] public float VerticalWalljumpVelocity = 1500.0f;
+	private int CurrentKyoteFrames;
+	private int CurrentPrejumpFrames = 0;
+	[Export] public float VerticalWalljumpVelocity = 500.0f;
 	[Export] public float JumpVelocity = -400.0f;
 	// Von Claude um automatische Abbremsung zu ermöglichen: Neue Variable für die Bremsrate nach dem Dash
 	[Export] public float DashBrakeRate = 2000.0f;
@@ -25,6 +29,7 @@ public partial class PlayerControls : CharacterBody2D
 	{
 		animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D"); //Bis hier
 		CurrentDashFrames = MaxDashFrames;
+		CurrentKyoteFrames = MaxKyoteFrames;
 	}
 
 	public Vector2 Dash(Vector2 velocity)
@@ -42,26 +47,43 @@ public partial class PlayerControls : CharacterBody2D
 	{
 		Vector2 velocity = Velocity;
 
-		// Add the gravity.
-		if (!IsOnFloor())
+		if (IsOnFloor())
 		{
-			velocity += GetGravity() * (float)delta;
+			if (CurrentPrejumpFrames > 0)
+			{
+				velocity.Y = JumpVelocity;
+				CurrentKyoteFrames = 0;
+				CurrentPrejumpFrames = 0;
+			}
+			CurrentKyoteFrames = MaxKyoteFrames;
 		}
+		else
+		{
+			if (CurrentKyoteFrames > 0)
+				CurrentKyoteFrames--;
+			if (CurrentPrejumpFrames > 0)
+				CurrentPrejumpFrames--;
+			velocity += GetGravity() * (float)delta; // Add the gravity. (Von Godot)
+		}
+
+
 
 		// Handle Jump.
 		if (Input.IsActionJustPressed("jump"))
 		{
-			if (IsOnFloor())
+			if (IsOnFloor() || CurrentKyoteFrames > 0)
 			{
 				velocity.Y = JumpVelocity;
+				CurrentKyoteFrames = 0;
 			}
-			else if (abilitys["Walljump"])
+			else if (abilitys["Walljump"] && IsOnWall())
 			{
-				if (IsOnWall())
-				{
-					velocity.Y = JumpVelocity;
-					velocity.X = VerticalWalljumpVelocity * GetWallNormal().X;
-				}
+				velocity.Y = JumpVelocity;
+				velocity.X = VerticalWalljumpVelocity * GetWallNormal().X;
+			}
+			else
+			{
+				CurrentPrejumpFrames = MaxPrejumpFrames;
 			}
 		}
 
