@@ -29,7 +29,7 @@ public partial class PlayerControls : CharacterBody2D
 	{
 		animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D"); //Bis hier
 		CurrentDashFrames = MaxDashFrames;
-		CurrentKyoteFrames = MaxKyoteFrames;
+		AddToGroup("Player");
 	}
 
 	public Vector2 Dash(Vector2 velocity)

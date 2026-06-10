@@ -43,15 +43,15 @@ thickness = 6
 offset_left = -211.0
 offset_top = -275.0
 offset_right = 302.0
-offset_bottom = 134.0
+offset_bottom = 174.0
 script = ExtResource("1_f4qlg")
 
 [node name="BackButton" type="Button" parent="." unique_id=1948225567]
 layout_mode = 0
 offset_left = 87.0
-offset_top = 289.0
+offset_top = 329.0
 offset_right = 400.0
-offset_bottom = 331.0
+offset_bottom = 371.0
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
