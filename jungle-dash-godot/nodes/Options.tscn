@@ -62,7 +62,7 @@ theme_override_styles/normal = ExtResource("2_f4qlg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hncpo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_oxcor")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jpcrk")
-text = "Back to Game"
+text = "Back"
 
 [node name="Label" type="Label" parent="." unique_id=1300733804]
 layout_mode = 0

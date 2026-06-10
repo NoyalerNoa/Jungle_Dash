@@ -71,7 +71,7 @@ process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="Options" parent="Player" unique_id=2021309966 instance=ExtResource("5_8mm7a")]
+[node name="Options" parent="." unique_id=2021309966 instance=ExtResource("5_8mm7a")]
 process_mode = 3
 visible = false
 offset_left = -250.0
