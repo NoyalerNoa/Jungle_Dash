@@ -10,6 +10,7 @@ public partial class GlobalData : Node
 
 	// Coins zentral gespeichert - erreichbar aus jeder Szene via GetNode<GlobalData>("/root/GlobalData")
 	public int TotalCoins = 0;
+	private PlayerData pendingLoadedGame;
 
 	public override void _Ready()
 	{
@@ -19,6 +20,7 @@ public partial class GlobalData : Node
 	public void SaveGameFunction(PlayerData playerData)
 	{
 		DirAccess.MakeDirRecursiveAbsolute(SaveFilePath);
+		TotalCoins = playerData.Coins;
 		ResourceSaver.Save(
 			playerData,
 			SaveFilePath + CurrentGameName + ".tres"
@@ -30,6 +32,26 @@ public partial class GlobalData : Node
 		string path = SaveFilePath + CurrentGameName + ".tres";
 		if (!ResourceLoader.Exists(path))
 			return null;
-		return ResourceLoader.Load<PlayerData>(path);
+		PlayerData playerData = ResourceLoader.Load<PlayerData>(path);
+		if (playerData != null)
+			TotalCoins = playerData.Coins;
+		return playerData;
+	}
+
+	public bool HasSaveGame()
+	{
+		return ResourceLoader.Exists(SaveFilePath + CurrentGameName + ".tres");
+	}
+
+	public void RequestLoadedGame(PlayerData playerData)
+	{
+		pendingLoadedGame = playerData;
+	}
+
+	public bool TryConsumeLoadedGame(out PlayerData playerData)
+	{
+		playerData = pendingLoadedGame;
+		pendingLoadedGame = null;
+		return playerData != null;
 	}
 }

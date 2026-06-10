@@ -21,15 +21,18 @@ public partial class CoinManager : Node
 
 	public void AddCoins(int amount)
 	{
-		Coins += amount;
-		globalData.TotalCoins = Coins;
-		CoinChanged?.Invoke(Coins);
+		SetCoins(Coins + amount);
 	}
 
 	public void ResetCoins()
 	{
-		Coins = 0;
-		globalData.TotalCoins = 0;
+		SetCoins(0);
+	}
+
+	public void SetCoins(int amount)
+	{
+		Coins = amount;
+		globalData.TotalCoins = Coins;
 		CoinChanged?.Invoke(Coins);
 	}
 }

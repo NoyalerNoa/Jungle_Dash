@@ -32,6 +32,29 @@ public partial class PlayerControls : CharacterBody2D
 		AddToGroup("Player");
 	}
 
+	public PlayerData CreatePlayerData(int coins)
+	{
+		return new PlayerData
+		{
+			Position = Position,
+			Speed = Speed,
+			DashUnlocked = abilitys["Dash"],
+			CurrentDashFrames = CurrentDashFrames,
+			Coins = coins
+		};
+	}
+
+	public void ApplyPlayerData(PlayerData playerData)
+	{
+		Position = playerData.Position;
+		if (playerData.Speed > 0.0f)
+			Speed = playerData.Speed;
+		abilitys["Dash"] = playerData.DashUnlocked;
+		CurrentDashFrames = playerData.CurrentDashFrames;
+		if (CurrentDashFrames <= -CooldownFrames || CurrentDashFrames > MaxDashFrames)
+			CurrentDashFrames = MaxDashFrames;
+	}
+
 	public Vector2 Dash(Vector2 velocity)
 	{
 		if (animatedSprite.FlipH)

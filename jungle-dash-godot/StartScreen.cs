@@ -6,10 +6,13 @@ public partial class StartScreen : Control
 	
 	
 	private VBoxContainer mainButtons;
+	private GlobalData globalData;
 	private Options options; // Typ von Panel auf Options geändert
 
 	public override void _Ready()
 	{
+		GetTree().Paused = false;
+		globalData = GetNode<GlobalData>("/root/GlobalData");
 		mainButtons = GetNode<VBoxContainer>("MainButtons");
 		options = GetNode<Options>("Options"); // Cast zur eigenen Klasse
 
@@ -18,6 +21,7 @@ public partial class StartScreen : Control
 
 		// StartScreen Buttons
 		GetNode<Button>("MainButtons/StartButton").Pressed += OnStartPressed;
+		GetNode<Button>("MainButtons/LoadButton").Pressed += OnLoadPressed;
 		GetNode<Button>("MainButtons/OptionsButton").Pressed += OnOptionsPressed;
 		GetNode<Button>("MainButtons/ExitButton").Pressed += OnExitPressed;
 
@@ -27,6 +31,19 @@ public partial class StartScreen : Control
 
 	private void OnStartPressed()
 	{
+		GetTree().ChangeSceneToFile("res://main_scene.tscn");
+	}
+
+	private void OnLoadPressed()
+	{
+		PlayerData playerData = globalData.LoadGameFunction();
+		if (playerData == null)
+		{
+			GD.PrintErr("No save game found.");
+			return;
+		}
+
+		globalData.RequestLoadedGame(playerData);
 		GetTree().ChangeSceneToFile("res://main_scene.tscn");
 	}
 

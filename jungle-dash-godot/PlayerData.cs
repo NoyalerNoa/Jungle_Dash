@@ -15,4 +15,7 @@ public partial class PlayerData : Resource
 
 	[Export]
 	public int CurrentDashFrames { get; set; }
+
+	[Export]
+	public int Coins { get; set; }
 }
