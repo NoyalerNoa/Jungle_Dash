@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class MainScene : Node2D
 {
@@ -25,7 +24,6 @@ public partial class MainScene : Node2D
 		options = GetNode<Options>("Player/Options");
 >>>>>>> Stashed changes
 		options.Visible = false;
-		
 		options.Connect("BackPressed", Callable.From(OnOptionsBackPressed));
 <<<<<<< Updated upstream
 =======
@@ -52,6 +50,11 @@ public partial class MainScene : Node2D
 		{
 			TogglePauseMenu();
 		}
+	}
+
+	private void UpdateCoinLabel(int amount)
+	{
+		coinLabel.Text = $"Punkte: {amount}";
 	}
 
 	private void TogglePauseMenu()
