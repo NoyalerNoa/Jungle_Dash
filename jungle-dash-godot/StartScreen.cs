@@ -31,6 +31,7 @@ public partial class StartScreen : Control
 
 	private void OnStartPressed()
 	{
+		globalData.TotalCoins = 0;
 		GetTree().ChangeSceneToFile("res://main_scene.tscn");
 	}
 

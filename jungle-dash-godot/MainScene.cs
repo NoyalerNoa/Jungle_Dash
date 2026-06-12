@@ -3,31 +3,22 @@ using Godot;
 public partial class MainScene : Node2D
 {
 	private Options options;
-<<<<<<< Updated upstream
-	private Button backButton;
-
-	public override void _Ready()
-	{
-		options = GetNode<Options>("Options");
-
-=======
 	private Label coinLabel;
 	private CoinManager coinManager;
 	private GlobalData globalData;
 	private PlayerControls player;
+	private TileMapLayer mapLayer;
 
 	public override void _Ready()
 	{
 		GetTree().Paused = false;
 		globalData = GetNode<GlobalData>("/root/GlobalData");
 		player = GetNode<PlayerControls>("Player");
-		options = GetNode<Options>("Player/Options");
->>>>>>> Stashed changes
+		mapLayer = GetNode<TileMapLayer>("TileMap/TileMapLayer");
+		options = GetNode<Options>("Options");
 		options.Visible = false;
 		options.Connect("BackPressed", Callable.From(OnOptionsBackPressed));
-<<<<<<< Updated upstream
-=======
-		GetNode<Button>("Player/Options/MenuButton").Pressed += OnMenuButtonPressed;
+		GetNode<Button>("Options/MenuButton").Pressed += OnMenuButtonPressed;
 		GetNode<Button>("HUD/SaveLoadGroup/Save").Pressed += OnSaveGamePressed;
 		GetNode<Button>("HUD/SaveLoadGroup/Load").Pressed += OnLoadGamePressed;
 
@@ -36,17 +27,17 @@ public partial class MainScene : Node2D
 		// CoinManager holen und Event abonnieren
 		coinManager = GetNode<CoinManager>("CoinManager");
 		coinManager.CoinChanged += UpdateCoinLabel;
+		BuildExtraMapDetails();
 
 		if (globalData.TryConsumeLoadedGame(out PlayerData loadedGame))
 			ApplyLoadedGame(loadedGame);
 		else
 			UpdateCoinLabel(coinManager.Coins);
->>>>>>> Stashed changes
 	}
 
 	public override void _Input(InputEvent @event)
 	{
-		if (@event.IsActionPressed("ui_cancel"))
+		if (@event.IsActionPressed("ui_cancel") || @event.IsActionPressed("esc"))
 		{
 			TogglePauseMenu();
 		}
@@ -68,8 +59,6 @@ public partial class MainScene : Node2D
 		GetTree().Paused = false;
 		options.Visible = false;
 	}
-<<<<<<< Updated upstream
-=======
 
 	private void OnMenuButtonPressed()
 	{
@@ -102,5 +91,36 @@ public partial class MainScene : Node2D
 		player.ApplyPlayerData(playerData);
 		coinManager.SetCoins(playerData.Coins);
 	}
->>>>>>> Stashed changes
+
+	private void BuildExtraMapDetails()
+	{
+		PlacePlatform(new Vector2I(8, 30), 10);
+		PlacePlatform(new Vector2I(23, 27), 9);
+		PlacePlatform(new Vector2I(39, 24), 8);
+		PlacePlatform(new Vector2I(53, 29), 11);
+		PlacePlatform(new Vector2I(65, 21), 8);
+
+		PlaceColumn(new Vector2I(18, 31), 4);
+		PlaceColumn(new Vector2I(35, 28), 5);
+		PlaceColumn(new Vector2I(50, 25), 5);
+		PlaceColumn(new Vector2I(61, 30), 4);
+	}
+
+	private void PlacePlatform(Vector2I startCell, int width)
+	{
+		for (int x = 0; x < width; x++)
+		{
+			Vector2I atlas = x == 0 ? new Vector2I(1, 1) : x == width - 1 ? new Vector2I(5, 1) : new Vector2I(3, 1);
+			mapLayer.SetCell(startCell + new Vector2I(x, 0), 1, atlas);
+
+			if (x > 0 && x < width - 1)
+				mapLayer.SetCell(startCell + new Vector2I(x, 1), 1, new Vector2I(3, 3));
+		}
+	}
+
+	private void PlaceColumn(Vector2I startCell, int height)
+	{
+		for (int y = 0; y < height; y++)
+			mapLayer.SetCell(startCell + new Vector2I(0, y), 1, new Vector2I(3, 3));
+	}
 }

@@ -21,10 +21,11 @@ buses/default_bus_layout="Music"
 
 [autoload]
 
-GlobalData="*uid://bwb2noogq6alo"
+GlobalData="*res://GlobalData.cs"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
