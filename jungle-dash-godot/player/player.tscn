@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bl424xncdj20l"]
 
 [ext_resource type="Script" uid="uid://cmo4c2cr5eh58" path="res://player/PlayerControls.cs" id="1_boad6"]
-[ext_resource type="SpriteFrames" uid="uid://darfuaemsfnyf" path="res://player/player_Animations.tres" id="2_rkbax"]
 [ext_resource type="Texture2D" uid="uid://dicr008cvkd2e" path="res://assets/img/Individual Sprite/idle/Warrior_Idle_1.png" id="1_g6k8r"]
 [ext_resource type="Texture2D" uid="uid://ekohwfo3r2x4" path="res://assets/img/Individual Sprite/idle/Warrior_Idle_2.png" id="2_boad6"]
 [ext_resource type="Texture2D" uid="uid://dfapetk4xvjjq" path="res://assets/img/Individual Sprite/Crouch/Warrior_Crouch_1.png" id="2_x7c3f"]
@@ -254,9 +253,7 @@ shape = SubResource("CapsuleShape2D_ebec5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=710964095]
 position = Vector2(5, -6)
-sprite_frames = ExtResource("2_rkbax")
-animation = &"crouch"
 sprite_frames = SubResource("SpriteFrames_yllr7")
-animation = &"dash"
+animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.08759653
