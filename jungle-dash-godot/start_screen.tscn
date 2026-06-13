@@ -74,6 +74,7 @@ theme_override_constants/separation = 12
 [node name="StartButton" type="Button" parent="MainButtons" unique_id=1195984350]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -85,9 +86,10 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_k1na2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_afy8x")
 text = "Start game"
 
-[node name="LoadButton" type="Button" parent="MainButtons"]
+[node name="LoadButton" type="Button" parent="MainButtons" unique_id=2030798991]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -102,6 +104,7 @@ text = "Load Game"
 [node name="OptionsButton" type="Button" parent="MainButtons" unique_id=403421112]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -116,6 +119,7 @@ text = "Options"
 [node name="ExitButton" type="Button" parent="MainButtons" unique_id=1060986863]
 layout_mode = 2
 size_flags_vertical = 3
+focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)

@@ -9,6 +9,20 @@
 [ext_resource type="Script" uid="uid://bw1dodb8t44o6" path="res://CoinManager.cs" id="7_coinmgr"]
 [ext_resource type="StyleBox" uid="uid://bj5vvcrb737j3" path="res://new_style_box_flat.tres" id="8_menu_style"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_score_panel"]
+bg_color = Color(0.02, 0.035, 0.03, 0.72)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.88, 0.22, 0.55)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_menu_pressed"]
 bg_color = Color(0.63529414, 0.63529414, 0.63529414, 1)
 corner_radius_top_left = 20
@@ -29,20 +43,6 @@ shadow_offset = Vector2(0, 3.41)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_menu_focus"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_score_panel"]
-bg_color = Color(0.02, 0.035, 0.03, 0.72)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 0.88, 0.22, 0.55)
-shadow_color = Color(0, 0, 0, 0.35)
-shadow_size = 4
-
 [node name="MainScene" type="Node2D" unique_id=1534010968]
 script = ExtResource("1_d5x1h")
 
@@ -51,13 +51,13 @@ script = ExtResource("7_coinmgr")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=321456987]
 
-[node name="HUDBar" type="ColorRect" parent="HUD"]
+[node name="HUDBar" type="ColorRect" parent="HUD" unique_id=448729630]
 offset_right = 1152.0
 offset_bottom = 72.0
 mouse_filter = 2
 color = Color(0.015, 0.025, 0.02, 0.52)
 
-[node name="ScorePanel" type="Panel" parent="HUD"]
+[node name="ScorePanel" type="Panel" parent="HUD" unique_id=1446822056]
 offset_left = 14.0
 offset_top = 10.0
 offset_right = 208.0
@@ -89,6 +89,7 @@ offset_bottom = 58.0
 layout_mode = 0
 offset_right = 108.0
 offset_bottom = 42.0
+focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -105,6 +106,7 @@ layout_mode = 0
 offset_left = 122.0
 offset_right = 236.0
 offset_bottom = 42.0
+focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -129,11 +131,6 @@ tile_set = ExtResource("1_0f027")
 
 [node name="Player" parent="." unique_id=538689558 instance=ExtResource("3_gyfs4")]
 position = Vector2(136, 542)
-MaxDashFrames = 8
-DashVelocitiy = 700.0
-CooldownFrames = 30
-MaxKyoteFrames = 8
-VerticalWalljumpVelocity = 500.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=118308781]
 process_callback = 0
@@ -169,35 +166,35 @@ text = "Back to Menu"
 [node name="Coin" parent="." unique_id=832799188 instance=ExtResource("6_nfk4m")]
 position = Vector2(430, 462)
 
-[node name="Coin2" parent="." instance=ExtResource("6_nfk4m")]
+[node name="Coin2" parent="." unique_id=904442364 instance=ExtResource("6_nfk4m")]
 position = Vector2(168, 450)
 
-[node name="Coin3" parent="." instance=ExtResource("6_nfk4m")]
+[node name="Coin3" parent="." unique_id=1045615491 instance=ExtResource("6_nfk4m")]
 position = Vector2(216, 450)
 
-[node name="Coin4" parent="." instance=ExtResource("6_nfk4m")]
+[node name="Coin4" parent="." unique_id=1628631644 instance=ExtResource("6_nfk4m")]
 position = Vector2(280, 450)
 
-[node name="Coin5" parent="." instance=ExtResource("6_nfk4m")]
+[node name="Coin5" parent="." unique_id=1582654988 instance=ExtResource("6_nfk4m")]
 position = Vector2(392, 402)
 
-[node name="Coin6" parent="." instance=ExtResource("6_nfk4m")]
+[node name="Coin6" parent="." unique_id=1644935105 instance=ExtResource("6_nfk4m")]
 position = Vector2(456, 402)
 
-[node name="Coin7" parent="." instance=ExtResource("6_nfk4m")]
+[node name="Coin7" parent="." unique_id=417679004 instance=ExtResource("6_nfk4m")]
 position = Vector2(648, 354)
 
-[node name="Coin8" parent="." instance=ExtResource("6_nfk4m")]
+[node name="Coin8" parent="." unique_id=2017448097 instance=ExtResource("6_nfk4m")]
 position = Vector2(712, 354)
 
-[node name="Coin9" parent="." instance=ExtResource("6_nfk4m")]
+[node name="Coin9" parent="." unique_id=929565307 instance=ExtResource("6_nfk4m")]
 position = Vector2(872, 434)
 
-[node name="Coin10" parent="." instance=ExtResource("6_nfk4m")]
+[node name="Coin10" parent="." unique_id=1550231543 instance=ExtResource("6_nfk4m")]
 position = Vector2(936, 434)
 
-[node name="Coin11" parent="." instance=ExtResource("6_nfk4m")]
+[node name="Coin11" parent="." unique_id=222630608 instance=ExtResource("6_nfk4m")]
 position = Vector2(1080, 306)
 
-[node name="Coin12" parent="." instance=ExtResource("6_nfk4m")]
+[node name="Coin12" parent="." unique_id=1412129178 instance=ExtResource("6_nfk4m")]
 position = Vector2(1144, 306)
