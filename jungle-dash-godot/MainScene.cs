@@ -16,10 +16,10 @@ public partial class MainScene : Node2D
 		globalData = GetNode<GlobalData>("/root/GlobalData");
 		player = GetNode<PlayerControls>("Player");
 		mapLayer = GetNode<TileMapLayer>("TileMap/TileMapLayer");
-		options = GetNode<Options>("Player/Options");
+		options = GetNode<Options>("HUD/Options");
 		options.Visible = false;
 		options.Connect("BackPressed", Callable.From(OnOptionsBackPressed));
-		GetNode<Button>("Options/MenuButton").Pressed += OnMenuButtonPressed;
+		GetNode<Button>("HUD/Options/MenuButton").Pressed += OnMenuButtonPressed;
 		GetNode<Button>("HUD/SaveLoadGroup/Save").Pressed += OnSaveGamePressed;
 		GetNode<Button>("HUD/SaveLoadGroup/Load").Pressed += OnLoadGamePressed;
 
@@ -33,7 +33,7 @@ public partial class MainScene : Node2D
 			ApplyLoadedGame(loadedGame);
 		else
 			UpdateCoinLabel(coinManager.Coins);
-		Jungle_Dash_Logger.logger.Debug($"Die Hauptszene wurde initialisiert.");
+		Jungle_Dash_Logger.logger?.Debug($"Die Hauptszene wurde initialisiert.");
 	}
 
 	public override void _Input(InputEvent @event)
@@ -46,34 +46,34 @@ public partial class MainScene : Node2D
 
 	private void UpdateCoinLabel(int amount)
 	{
-		Jungle_Dash_Logger.logger.Debug($"Der Geldstand wird auf {amount} Coins gesetzt.");
+		Jungle_Dash_Logger.logger?.Debug($"Der Geldstand wird auf {amount} Coins gesetzt.");
 		coinLabel.Text = $"Punkte: {amount}";
 	}
 
 	private void TogglePauseMenu()
 	{
-		Jungle_Dash_Logger.logger.Debug("Die Optionen wurden geöffnet.");
+		Jungle_Dash_Logger.logger?.Debug("Die Optionen wurden geöffnet.");
 		GetTree().Paused = true;
 		options.Visible = true;
 	}
 
 	private void OnOptionsBackPressed()
 	{
-		Jungle_Dash_Logger.logger.Debug("Die Optionen wurden geschlossen.");
+		Jungle_Dash_Logger.logger?.Debug("Die Optionen wurden geschlossen.");
 		GetTree().Paused = false;
 		options.Visible = false;
 	}
 
 	private void OnMenuButtonPressed()
 	{
-		Jungle_Dash_Logger.logger.Debug("Es wird zum Startbildschirm gewechselt.");
+		Jungle_Dash_Logger.logger?.Debug("Es wird zum Startbildschirm gewechselt.");
 		GetTree().Paused = false;
 		GetTree().ChangeSceneToFile("res://start_screen.tscn");
 	}
 
 	private void OnSaveGamePressed()
 	{
-		Jungle_Dash_Logger.logger.Debug("Das Spiel wird gespeichert.");
+		Jungle_Dash_Logger.logger?.Debug("Das Spiel wird gespeichert.");
 		PlayerData playerData = player.CreatePlayerData(coinManager.Coins);
 		globalData.SaveGameFunction(playerData);
 		GD.Print("Game saved.");
@@ -81,7 +81,7 @@ public partial class MainScene : Node2D
 
 	private void OnLoadGamePressed()
 	{
-		Jungle_Dash_Logger.logger.Debug("Das Spiel wird geladen.");
+		Jungle_Dash_Logger.logger?.Debug("Das Spiel wird geladen.");
 		PlayerData playerData = globalData.LoadGameFunction();
 		if (playerData == null)
 		{
@@ -101,7 +101,7 @@ public partial class MainScene : Node2D
 
 	private void BuildExtraMapDetails()
 	{
-		Jungle_Dash_Logger.logger.Debug("Es werden extra Map-Blöcke gebaut.");
+		Jungle_Dash_Logger.logger?.Debug("Es werden extra Map-Blöcke gebaut.");
 		PlacePlatform(new Vector2I(8, 30), 10);
 		PlacePlatform(new Vector2I(23, 27), 9);
 		PlacePlatform(new Vector2I(39, 24), 8);

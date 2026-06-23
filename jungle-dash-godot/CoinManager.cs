@@ -11,11 +11,12 @@ public partial class CoinManager : Node
 
 	public override void _Ready()
 	{
-		Jungle_Dash_Logger.logger.Debug("Die Münzen werden geladen.");
+		Jungle_Dash_Logger.logger?.Debug("Die Münzen werden geladen.");
 		Instance = this;
-		globalData = GetNode<GlobalData>("/root/GlobalData");
+		globalData = GetNodeOrNull<GlobalData>("/root/GlobalData");
 		// Coins aus GlobalData laden damit sie Szenenübergreifend erhalten bleiben
-		Coins = globalData.TotalCoins;
+		if (globalData != null)
+			Coins = globalData.TotalCoins;
 	}
 
 	public delegate void CoinChangedHandler(int amount);
@@ -34,7 +35,8 @@ public partial class CoinManager : Node
 	public void SetCoins(int amount)
 	{
 		Coins = amount;
-		globalData.TotalCoins = Coins;
+		if (globalData != null)
+			globalData.TotalCoins = Coins;
 		CoinChanged?.Invoke(Coins);
 	}
 }
