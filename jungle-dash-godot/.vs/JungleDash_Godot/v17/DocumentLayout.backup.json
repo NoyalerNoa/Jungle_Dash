@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|solutionrelative:player\\playercontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|c:\\users\\noa\\desktop\\2ahif\\pos\\projekte\\jungle_dash\\jungle-dash-godot\\savebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|solutionrelative:savebutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|c:\\users\\noa\\desktop\\2ahif\\pos\\projekte\\jungle_dash\\jungle-dash-godot\\nodes\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54FC89C5-F032-47E1-9810-50A10B3FD699}|JungleDash_Godot.csproj|solutionrelative:nodes\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,11 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "SaveButton.cs",
+              "DocumentMoniker": "C:\\Users\\Noa\\Desktop\\2AHIF\\POS\\Projekte\\Jungle_Dash\\jungle-dash-godot\\SaveButton.cs",
+              "RelativeDocumentMoniker": "SaveButton.cs",
+              "ToolTip": "C:\\Users\\Noa\\Desktop\\2AHIF\\POS\\Projekte\\Jungle_Dash\\jungle-dash-godot\\SaveButton.cs",
+              "RelativeToolTip": "SaveButton.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAWwCIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T08:20:23.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Options.cs",
               "DocumentMoniker": "C:\\Users\\Noa\\Desktop\\2AHIF\\POS\\Projekte\\Jungle_Dash\\jungle-dash-godot\\nodes\\Options.cs",
               "RelativeDocumentMoniker": "nodes\\Options.cs",
@@ -42,7 +59,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MainScene.cs",
               "DocumentMoniker": "C:\\Users\\Noa\\Desktop\\2AHIF\\POS\\Projekte\\Jungle_Dash\\jungle-dash-godot\\MainScene.cs",
               "RelativeDocumentMoniker": "MainScene.cs",
@@ -58,16 +75,16 @@
               "Title": "PlayerControls.cs",
               "DocumentMoniker": "C:\\Users\\Noa\\Desktop\\2AHIF\\POS\\Projekte\\Jungle_Dash\\jungle-dash-godot\\player\\PlayerControls.cs",
               "RelativeDocumentMoniker": "player\\PlayerControls.cs",
-              "ToolTip": "C:\\Users\\Noa\\Desktop\\2AHIF\\POS\\Projekte\\Jungle_Dash\\jungle-dash-godot\\player\\PlayerControls.cs",
-              "RelativeToolTip": "player\\PlayerControls.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAuwIQAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Noa\\Desktop\\2AHIF\\POS\\Projekte\\Jungle_Dash\\jungle-dash-godot\\player\\PlayerControls.cs*",
+              "RelativeToolTip": "player\\PlayerControls.cs*",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAewG4AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-12T14:38:25.511Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "StartScreen.cs",
               "DocumentMoniker": "C:\\Users\\Noa\\Desktop\\2AHIF\\POS\\Projekte\\Jungle_Dash\\jungle-dash-godot\\StartScreen.cs",
               "RelativeDocumentMoniker": "StartScreen.cs",

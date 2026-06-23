@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c354tb2ndtc6y" path="res://Coin.tscn" id="6_nfk4m"]
 [ext_resource type="Script" uid="uid://bw1dodb8t44o6" path="res://CoinManager.cs" id="7_coinmgr"]
 [ext_resource type="StyleBox" uid="uid://bj5vvcrb737j3" path="res://new_style_box_flat.tres" id="8_menu_style"]
+[ext_resource type="PackedScene" uid="uid://bc3rimyy2nio7" path="res://nodes/snake.tscn" id="9_7ycvg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_score_panel"]
 bg_color = Color(0.02, 0.035, 0.03, 0.72)
@@ -198,3 +199,9 @@ position = Vector2(1080, 306)
 
 [node name="Coin12" parent="." unique_id=1412129178 instance=ExtResource("6_nfk4m")]
 position = Vector2(1144, 306)
+
+[node name="Snake" parent="." unique_id=1251405874 instance=ExtResource("9_7ycvg")]
+position = Vector2(684, 283)
+
+[node name="Snake2" parent="." unique_id=679939135 instance=ExtResource("9_7ycvg")]
+position = Vector2(309, 298)
