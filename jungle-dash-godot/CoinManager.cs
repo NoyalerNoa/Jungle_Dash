@@ -1,4 +1,5 @@
 using Godot;
+using JungleDash_Godot;
 
 public partial class CoinManager : Node
 {
@@ -10,6 +11,7 @@ public partial class CoinManager : Node
 
 	public override void _Ready()
 	{
+		Jungle_Dash_Logger.logger.Debug("Die Münzen werden geladen.");
 		Instance = this;
 		globalData = GetNode<GlobalData>("/root/GlobalData");
 		// Coins aus GlobalData laden damit sie Szenenübergreifend erhalten bleiben
