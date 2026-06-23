@@ -152,6 +152,7 @@ vertical_alignment = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1667123309]
 
 [node name="Options" parent="." unique_id=2021309966 instance=ExtResource("5_vdywr")]
+visible = false
 layout_mode = 0
 offset_left = -238.0
 offset_top = -170.0
