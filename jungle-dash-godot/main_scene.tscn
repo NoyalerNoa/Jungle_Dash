@@ -139,18 +139,15 @@ process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="Snake" parent="." unique_id=1251405874 instance=ExtResource("9_7ycvg")]
-position = Vector2(684, 283)
-
-[node name="Options" parent="." unique_id=2021309966 instance=ExtResource("5_8mm7a")]
+[node name="Options" parent="Player" unique_id=2021309966 instance=ExtResource("5_8mm7a")]
 process_mode = 3
 visible = false
-offset_left = -250.0
-offset_top = -207.0
-offset_right = 263.0
-offset_bottom = 242.0
+offset_left = -258.0
+offset_top = -229.0
+offset_right = 255.0
+offset_bottom = 220.0
 
-[node name="MenuButton" type="Button" parent="Options" unique_id=968365276]
+[node name="MenuButton" type="Button" parent="Player/Options" unique_id=968365276]
 layout_mode = 0
 offset_left = 87.0
 offset_top = 277.0
@@ -167,6 +164,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_menu_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_menu_hover")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_menu_focus")
 text = "Back to Menu"
+
+[node name="Snake" parent="." unique_id=1251405874 instance=ExtResource("9_7ycvg")]
+position = Vector2(684, 283)
 
 [node name="Coin" parent="." unique_id=832799188 instance=ExtResource("6_nfk4m")]
 position = Vector2(430, 462)

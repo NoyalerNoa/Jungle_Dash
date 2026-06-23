@@ -16,7 +16,7 @@ public partial class MainScene : Node2D
 		globalData = GetNode<GlobalData>("/root/GlobalData");
 		player = GetNode<PlayerControls>("Player");
 		mapLayer = GetNode<TileMapLayer>("TileMap/TileMapLayer");
-		options = GetNode<Options>("Options");
+		options = GetNode<Options>("Player/Options");
 		options.Visible = false;
 		options.Connect("BackPressed", Callable.From(OnOptionsBackPressed));
 		GetNode<Button>("Options/MenuButton").Pressed += OnMenuButtonPressed;
