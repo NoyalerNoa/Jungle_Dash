@@ -39,4 +39,13 @@ public partial class CoinManager : Node
 			globalData.TotalCoins = Coins;
 		CoinChanged?.Invoke(Coins);
 	}
+
+	public bool SpendCoins(int amount)
+	{
+		if (Coins < amount)
+			return false;
+
+		SetCoins(Coins - amount);
+		return true;
+	}
 }

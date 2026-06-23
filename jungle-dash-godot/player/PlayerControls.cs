@@ -44,7 +44,9 @@ public partial class PlayerControls : CharacterBody2D
 			Speed = Speed,
 			DashUnlocked = abilitys["Dash"],
 			CurrentDashFrames = CurrentDashFrames,
-			Coins = coins
+			Coins = coins,
+			JumpVelocity = JumpVelocity,
+			DashVelocity = DashVelocity
 		};
 	}
 
@@ -53,6 +55,10 @@ public partial class PlayerControls : CharacterBody2D
 		Position = playerData.Position;
 		if (playerData.Speed > 0.0f)
 			Speed = playerData.Speed;
+		if (playerData.JumpVelocity < 0.0f)
+			JumpVelocity = playerData.JumpVelocity;
+		if (playerData.DashVelocity > 0.0f)
+			DashVelocity = playerData.DashVelocity;
 		abilitys["Dash"] = playerData.DashUnlocked;
 		CurrentDashFrames = playerData.CurrentDashFrames;
 		if (CurrentDashFrames <= -CooldownFrames || CurrentDashFrames > MaxDashFrames)
