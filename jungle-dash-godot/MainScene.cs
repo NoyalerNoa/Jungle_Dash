@@ -27,7 +27,6 @@ public partial class MainScene : Node2D
 		// CoinManager holen und Event abonnieren
 		coinManager = GetNode<CoinManager>("CoinManager");
 		coinManager.CoinChanged += UpdateCoinLabel;
-		BuildExtraMapDetails();
 
 		if (globalData.TryConsumeLoadedGame(out PlayerData loadedGame))
 			ApplyLoadedGame(loadedGame);

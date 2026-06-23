@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dxmek57qugpvp" path="res://nodes/Snake.cs" id="1_73w2n"]
 [ext_resource type="Texture2D" uid="uid://bteveviviv1ct" path="res://assets/img/PixelSnakes_Free_Carysaurus/SnakeRed-Walk.png" id="2_3r7of"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42a1a"]
+size = Vector2(29, 19)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_l76cl"]
 atlas = ExtResource("2_3r7of")
 region = Rect2(0, 0, 32, 32)
@@ -60,14 +63,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_42a1a"]
-size = Vector2(29, 19)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c30j8"]
 size = Vector2(4, 8.5)
 
 [node name="Snake" type="CharacterBody2D" unique_id=1251405874]
 script = ExtResource("1_73w2n")
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=406870856]
+position = Vector2(-0.5, 6.75)
+scale = Vector2(0.975, 0.975)
+shape = SubResource("RectangleShape2D_42a1a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1806727883]
 sprite_frames = SubResource("SpriteFrames_x54sn")
@@ -75,10 +80,6 @@ animation = &"walk"
 autoplay = "walk"
 frame = 5
 frame_progress = 0.058737263
-
-[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=406870856]
-position = Vector2(-0.5, 6.5)
-shape = SubResource("RectangleShape2D_42a1a")
 
 [node name="Fall_Detecter_Front" type="Area2D" parent="." unique_id=1546100365]
 position = Vector2(100, 0)
@@ -92,3 +93,13 @@ shape = SubResource("RectangleShape2D_c30j8")
 [node name="Detecter_Back" type="CollisionShape2D" parent="Fall_Detecter_Back" unique_id=1695305571]
 position = Vector2(-17, 20.2)
 shape = SubResource("RectangleShape2D_c30j8")
+
+[node name="Body" type="Area2D" parent="." unique_id=1153673357]
+
+[node name="Hurbox" type="CollisionShape2D" parent="Body" unique_id=924574947]
+position = Vector2(-0.5, 6.5)
+scale = Vector2(1.01, 1.01)
+shape = SubResource("RectangleShape2D_42a1a")
+
+[node name="Timer" type="Timer" parent="." unique_id=2026464261]
+process_mode = 3
