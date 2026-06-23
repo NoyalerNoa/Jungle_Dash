@@ -19,10 +19,10 @@ public partial class AudioControl : HSlider
 	}
 
 	private void OnValueChanged(double value)
-    {
-        Jungle_Dash_Logger.logger.Debug("Die Lautstärke wurde geändert.");
-        // Slider-Wert in Dezibel umwandeln
-        AudioServer.SetBusVolumeDb(
+	{
+		Jungle_Dash_Logger.logger.Debug("Die Lautstärke wurde geändert.");
+		// Slider-Wert in Dezibel umwandeln
+		AudioServer.SetBusVolumeDb(
 			busIndex,
 			Mathf.LinearToDb((float)value)
 		);
