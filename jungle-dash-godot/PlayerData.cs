@@ -18,4 +18,10 @@ public partial class PlayerData : Resource
 
 	[Export]
 	public int Coins { get; set; }
+
+	[Export]
+	public float JumpVelocity { get; set; }
+
+	[Export]
+	public float DashVelocity { get; set; }
 }
