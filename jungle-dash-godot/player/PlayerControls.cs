@@ -15,8 +15,6 @@ public partial class PlayerControls : CharacterBody2D
 	private int CurrentPrejumpFrames = 0;
 	[Export] public float VerticalWalljumpVelocity = 500.0f;
 	[Export] public float JumpVelocity = -400.0f;
-	[Export] public float MinMapX = 0.0f;
-	[Export] public float MaxMapX = 1250.0f;
 	[Export] public float FallRespawnY = 760.0f;
 	[Export] public Vector2 RespawnPosition = new Vector2(136, 542);
 	// Von Claude um automatische Abbremsung zu ermöglichen: Neue Variable für die Bremsrate nach dem Dash
@@ -206,26 +204,6 @@ public partial class PlayerControls : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
-		KeepInsideMap();
 	}
 
-	private void KeepInsideMap()
-	{
-		Vector2 position = Position;
-		Vector2 velocity = Velocity;
-
-		if (position.X < MinMapX)
-		{
-			position.X = MinMapX;
-			velocity.X = Mathf.Max(velocity.X, 0.0f);
-		}
-		else if (position.X > MaxMapX)
-		{
-			position.X = MaxMapX;
-			velocity.X = Mathf.Min(velocity.X, 0.0f);
-		}
-
-		Position = position;
-		Velocity = velocity;
 	}
-}

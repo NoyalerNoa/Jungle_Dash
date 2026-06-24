@@ -30,10 +30,10 @@ public partial class MainScene : Node2D
 		coinScene = GD.Load<PackedScene>("res://Coin.tscn");
 		snakeScene = GD.Load<PackedScene>("res://nodes/snake.tscn");
 
-		options = GetNode<Options>("HUD/Options");
+		options = GetNode<Options>("Player/Options");
 		options.Visible = false;
 		options.Connect("BackPressed", Callable.From(OnOptionsBackPressed));
-		GetNode<Button>("HUD/Options/MenuButton").Pressed += OnMenuButtonPressed;
+		GetNode<Button>("Player/Options/MenuButton").Pressed += OnMenuButtonPressed;
 		GetNode<Button>("HUD/SaveLoadGroup/Save").Pressed += OnSaveGamePressed;
 		GetNode<Button>("HUD/SaveLoadGroup/Load").Pressed += OnLoadGamePressed;
 
@@ -57,6 +57,9 @@ public partial class MainScene : Node2D
 	{
 		if (!isInSecondMap && player.Position.X > 1185.0f)
 			EnterSecondMap();
+
+		else if (isInSecondMap && player.Position.X < 1150.0f)
+			player.RespawnPosition = new Vector2(1368, 462);
 	}
 
 	public override void _Input(InputEvent @event)
@@ -288,10 +291,7 @@ public partial class MainScene : Node2D
 	private void EnterSecondMap()
 	{
 		isInSecondMap = true;
-		player.Position = new Vector2(1368, 462);
-		player.RespawnPosition = player.Position;
-		player.MinMapX = 1320.0f;
-		player.MaxMapX = 2600.0f;
+		player.RespawnPosition = new Vector2(1368, 462);
 		background.Texture = GetDesertBackgroundTexture();
 		background.Position = new Vector2(576.0f, 324.0f);
 		background.Scale = Vector2.One;
