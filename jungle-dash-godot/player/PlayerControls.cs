@@ -20,8 +20,8 @@ public partial class PlayerControls : CharacterBody2D
 
 	public Dictionary<string, bool> abilitys = new Dictionary<string, bool>()
 	{
-		{"Dash", true },
-		{"Walljump", true}
+		{"Dash", false },
+		{"Walljump", false}
 	};
 	private AnimatedSprite2D animatedSprite; // Von ChatGPT; Prompt: Wie erstelle ich animationen?
 

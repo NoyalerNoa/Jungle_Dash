@@ -19,7 +19,7 @@ public partial class MainScene : Node2D
 		options = GetNode<Options>("Player/Options");
 		options.Visible = false;
 		options.Connect("BackPressed", Callable.From(OnOptionsBackPressed));
-		GetNode<Button>("Options/MenuButton").Pressed += OnMenuButtonPressed;
+		GetNode<Button>("Player/Options/MenuButton").Pressed += OnMenuButtonPressed;
 		GetNode<Button>("HUD/SaveLoadGroup/Save").Pressed += OnSaveGamePressed;
 		GetNode<Button>("HUD/SaveLoadGroup/Load").Pressed += OnLoadGamePressed;
 

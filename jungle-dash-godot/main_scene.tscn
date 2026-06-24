@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bpq3tdsi4arxx" path="res://assets/img/Death_Screen.png" id="7_wr18j"]
 [ext_resource type="StyleBox" uid="uid://bj5vvcrb737j3" path="res://new_style_box_flat.tres" id="8_menu_style"]
 [ext_resource type="PackedScene" uid="uid://bc3rimyy2nio7" path="res://nodes/snake.tscn" id="9_7ycvg"]
+[ext_resource type="PackedScene" uid="uid://bxhrp8bn8vywy" path="res://nodes/rune.tscn" id="11_qwutr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_score_panel"]
 bg_color = Color(0.02, 0.035, 0.03, 0.72)
@@ -142,6 +143,7 @@ position_smoothing_speed = 8.0
 [node name="Options" parent="Player" unique_id=2021309966 instance=ExtResource("5_8mm7a")]
 process_mode = 3
 visible = false
+z_index = 10
 offset_left = -258.0
 offset_top = -229.0
 offset_right = 255.0
@@ -212,3 +214,11 @@ visible = false
 top_level = true
 position = Vector2(-1523, -152)
 texture = ExtResource("7_wr18j")
+
+[node name="Rune2" parent="." unique_id=1766286521 instance=ExtResource("11_qwutr")]
+position = Vector2(1098, 512)
+"Fähigkeit" = "Dash"
+
+[node name="Rune" parent="." unique_id=1374628536 instance=ExtResource("11_qwutr")]
+position = Vector2(67, 496)
+"Fähigkeit" = "Walljump"

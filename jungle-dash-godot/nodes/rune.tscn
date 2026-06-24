@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bxhrp8bn8vywy"]
+
+[ext_resource type="Texture2D" uid="uid://c52dr2fo40gbr" path="res://assets/img/free_asset_pixel_runes_byArijkx_v1/icons160x160/2.png" id="1_n7i2k"]
+[ext_resource type="Script" uid="uid://8mkp0icehlkh" path="res://nodes/Rune.cs" id="1_sya43"]
+[ext_resource type="Texture2D" uid="uid://bbqjorvse8x1s" path="res://assets/img/free_asset_pixel_runes_byArijkx_v1/icons160x160/1.png" id="2_sya43"]
+[ext_resource type="Texture2D" uid="uid://ce2thtt05wcti" path="res://assets/img/free_asset_pixel_runes_byArijkx_v1/icons160x160/3.png" id="3_qwth4"]
+[ext_resource type="Texture2D" uid="uid://cgbknmrr1iwlt" path="res://assets/img/free_asset_pixel_runes_byArijkx_v1/icons160x160/4.png" id="4_onikc"]
+[ext_resource type="Texture2D" uid="uid://cbwq4on4n17p8" path="res://assets/img/free_asset_pixel_runes_byArijkx_v1/icons160x160/5.png" id="5_kl5hq"]
+[ext_resource type="Texture2D" uid="uid://duwj73ge3rnwq" path="res://assets/img/free_asset_pixel_runes_byArijkx_v1/icons160x160/6.png" id="6_skuha"]
+[ext_resource type="Texture2D" uid="uid://dque0s455wf54" path="res://assets/img/free_asset_pixel_runes_byArijkx_v1/icons160x160/7.png" id="7_22hxl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tu4xg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n7i2k")
+}],
+"loop": true,
+"name": &"Dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sya43")
+}],
+"loop": true,
+"name": &"Walljump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qwth4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_onikc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kl5hq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_skuha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_22hxl")
+}],
+"loop": true,
+"name": &"rest",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvk6x"]
+radius = 25.0
+height = 94.0
+
+[node name="Rune" type="Area2D" unique_id=1374628536]
+script = ExtResource("1_sya43")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1608709394]
+sprite_frames = SubResource("SpriteFrames_tu4xg")
+animation = &"Walljump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1388521068]
+position = Vector2(-1, -2)
+shape = SubResource("CapsuleShape2D_lvk6x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -25,7 +25,7 @@ public partial class Snake : CharacterBody2D
 		timer.Timeout += OnTimerTimeout;
 	}
 
-	private async void OnBodyEntered(Node2D body)
+	private async void OnBodyEntered(Node2D body) // Von Ki
 	{
 		if (body is PlayerControls)
 		{
