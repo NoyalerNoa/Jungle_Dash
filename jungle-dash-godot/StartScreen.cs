@@ -13,7 +13,7 @@ public partial class StartScreen : Control
 	public override void _Ready()
 	{
 		Jungle_Dash_Logger.init("JD.log");
-		Jungle_Dash_Logger.logger.Debug("Das Startmenü wird initialisiert.");
+		Jungle_Dash_Logger.logger?.Debug("Das Startmenü wird initialisiert.");
 		GetTree().Paused = false;
 		globalData = GetNode<GlobalData>("/root/GlobalData");
 		mainButtons = GetNode<VBoxContainer>("MainButtons");
@@ -35,14 +35,14 @@ public partial class StartScreen : Control
 
 	private void OnStartPressed()
 	{
-		Jungle_Dash_Logger.logger.Debug("Die Haupt-Scene wird gestartet.");
+		Jungle_Dash_Logger.logger?.Debug("Die Haupt-Scene wird gestartet.");
 		globalData.TotalCoins = 0;
 		GetTree().ChangeSceneToFile("res://main_scene.tscn");
 	}
 
 	private void OnLoadPressed()
 	{
-		Jungle_Dash_Logger.logger.Debug("Der Spielstand wird geladen.");
+		Jungle_Dash_Logger.logger?.Debug("Der Spielstand wird geladen.");
 		PlayerData playerData = globalData.LoadGameFunction();
 		if (playerData == null)
 		{
@@ -56,21 +56,21 @@ public partial class StartScreen : Control
 
 	private void OnOptionsPressed()
 	{
-		Jungle_Dash_Logger.logger.Debug("Die Optionen werden geöffnet.");
+		Jungle_Dash_Logger.logger?.Debug("Die Optionen werden geöffnet.");
 		mainButtons.Visible = false;
 		options.Visible = true;
 	}
 	
 	private void OnOptionsBackPressed()
 	{
-		Jungle_Dash_Logger.logger.Debug("Die Optionen werden geschlossen.");
+		Jungle_Dash_Logger.logger?.Debug("Die Optionen werden geschlossen.");
 		options.Visible = false;
 		mainButtons.Visible = true;
 	}
 
 	private void OnExitPressed()
 	{
-		Jungle_Dash_Logger.logger.Debug("Das Spiel wird geschlossen.");
+		Jungle_Dash_Logger.logger?.Debug("Das Spiel wird geschlossen.");
 		GetTree().Quit();
 	}
 }
