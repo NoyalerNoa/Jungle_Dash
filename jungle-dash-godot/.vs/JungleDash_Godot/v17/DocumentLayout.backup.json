@@ -42,8 +42,7 @@
               "RelativeToolTip": "Logger.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-24T06:46:28.425Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-24T06:46:28.425Z"
             },
             {
               "$type": "Document",
@@ -51,9 +50,9 @@
               "Title": "MainScene.cs",
               "DocumentMoniker": "C:\\Users\\Noa\\Desktop\\2AHIF\\POS\\Projekte\\Jungle_Dash\\jungle-dash-godot\\MainScene.cs",
               "RelativeDocumentMoniker": "MainScene.cs",
-              "ToolTip": "C:\\Users\\Noa\\Desktop\\2AHIF\\POS\\Projekte\\Jungle_Dash\\jungle-dash-godot\\MainScene.cs*",
-              "RelativeToolTip": "MainScene.cs*",
-              "ViewState": "AgIAABEBAAAAAAAAAAAmwCUBAAAbAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Noa\\Desktop\\2AHIF\\POS\\Projekte\\Jungle_Dash\\jungle-dash-godot\\MainScene.cs",
+              "RelativeToolTip": "MainScene.cs",
+              "ViewState": "AgIAADIBAAAAAAAAAAArwD8BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-24T06:01:09.471Z",
               "EditorCaption": ""
@@ -68,8 +67,7 @@
               "RelativeToolTip": "nodes\\Snake.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAwCoAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T14:28:29.386Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-23T14:28:29.386Z"
             },
             {
               "$type": "Document",
@@ -79,7 +77,7 @@
               "RelativeDocumentMoniker": "player\\PlayerControls.cs",
               "ToolTip": "C:\\Users\\Noa\\Desktop\\2AHIF\\POS\\Projekte\\Jungle_Dash\\jungle-dash-godot\\player\\PlayerControls.cs",
               "RelativeToolTip": "player\\PlayerControls.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-23T13:43:03.116Z",
               "EditorCaption": ""
@@ -94,8 +92,7 @@
               "RelativeToolTip": "nodes\\Rune.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAQwBgAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T13:42:52.976Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-23T13:42:52.976Z"
             }
           ]
         }
